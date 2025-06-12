@@ -8,7 +8,7 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-white font-bold text-xl">
-            THE ANALYTICS HUB
+            The Solution Mob
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#services" className="text-white hover:text-gray-300 transition-colors">

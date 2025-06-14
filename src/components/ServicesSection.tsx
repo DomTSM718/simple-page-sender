@@ -30,7 +30,7 @@ const ServicesSection = () => {
     {
       title: "ENTREPRENEUR-IN-RESIDENCE",
       description: "A unique offering designed to inject entrepreneurial thinking and leadership into businesses on-demand. This service brings seasoned entrepreneurs into your organisation acting as catalysts for growth, and helping you solve complex business challenges or explore new opportunities for a specified period. Enables you to benefit from the expertise, strategic vision, and innovation-driven mindset without the long-term commitment of a full-time executive hire.",
-      image: "/lovable-uploads/eebb2a80-28e9-4968-87a3-0a5e8ae4c324.png",
+      image: "/lovable-uploads/6b6ced12-de9e-42b7-8097-7098160462de.png",
       reverse: false
     }
   ];

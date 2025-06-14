@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
 
 const Header = () => {
   return (
@@ -14,15 +13,12 @@ const Header = () => {
             <a href="#services" className="text-white hover:text-gray-300 transition-colors">
               Services
             </a>
-            <a href="#about" className="text-white hover:text-gray-300 transition-colors">
-              About
-            </a>
             <a href="#contact" className="text-white hover:text-gray-300 transition-colors">
               Contact
             </a>
-            <Button variant="outline" className="text-white border-white hover:bg-white hover:text-black">
+            <a href="#contact" className="text-white hover:text-gray-300 transition-colors">
               Let's Talk
-            </Button>
+            </a>
           </nav>
         </div>
       </div>

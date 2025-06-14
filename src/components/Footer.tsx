@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-gray-900 py-12 border-t border-gray-700">
       <div className="container mx-auto px-6">
         <div className="text-center">
-          <div className="text-white font-bold text-xl mb-4">
+          <div className="text-white text-xl mb-4">
             The Solution Mob
           </div>
           <p className="text-gray-400 text-sm">

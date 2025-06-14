@@ -52,7 +52,7 @@ const ContactSection = () => {
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-5xl text-gray-900 mb-6">
             LET'S TALK
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
@@ -102,7 +102,7 @@ const ContactSection = () => {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 text-lg font-semibold"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 text-lg"
             >
               {isLoading ? 'Sending...' : 'Send Message'}
             </Button>

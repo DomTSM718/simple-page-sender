@@ -7,7 +7,7 @@ const ApproachSection = () => {
       {/* Left half - Text content with black background */}
       <div className="w-1/2 bg-black flex items-center justify-center">
         <div className="px-12 py-20 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">
+          <h2 className="text-3xl md:text-4xl text-white mb-8 tracking-wide">
             OUR APPROACH
           </h2>
           <p className="text-2xl text-white mb-8 leading-relaxed">

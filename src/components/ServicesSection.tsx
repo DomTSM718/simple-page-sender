@@ -13,7 +13,7 @@ const ServicesSection = () => {
     {
       title: "BUSINESS OPTIMIZATION AND AUTOMATION",
       description: "Efficiency is the cornerstone of any successful business. The Solution Mob focuses on streamlining operations and automating processes to reduce costs and improve productivity. We analyse existing workflows and systems, identifying areas for optimization and introducing tailored automation tools to free up your time and resources. By refining your operational structure, we help you achieve more with less effort.",
-      image: "/lovable-uploads/a08a428c-2709-42c5-9ebb-9dbef4f9a02b.png",
+      image: "/lovable-uploads/6c160cf3-8fed-487a-8bdd-853bd57198d5.png",
       reverse: true
     },
     {

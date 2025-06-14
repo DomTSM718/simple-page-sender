@@ -1,6 +1,6 @@
 
 import React from 'react';
-import AuthGuard from '@/components/AuthGuard';
+import EnhancedAuthGuard from '@/components/EnhancedAuthGuard';
 import AdminGuard from '@/components/AdminGuard';
 import ContactSubmissions from '@/components/ContactSubmissions';
 import { Button } from '@/components/ui/button';
@@ -29,7 +29,13 @@ const AdminDashboard = () => {
   };
 
   return (
-    <AuthGuard>
+    <EnhancedAuthGuard
+      sessionConfig={{
+        timeout: 20 * 60 * 1000, // 20 minutes for admin (shorter than regular users)
+        warningTime: 3 * 60 * 1000, // 3 minutes warning
+        maxDuration: 4 * 60 * 60 * 1000, // 4 hours max for admin sessions
+      }}
+    >
       {(user) => (
         <AdminGuard user={user}>
           <div className="min-h-screen bg-gray-50">
@@ -38,6 +44,7 @@ const AdminDashboard = () => {
                 <div>
                   <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
                   <p className="text-sm text-gray-500">Welcome, {user.email}</p>
+                  <p className="text-xs text-gray-400">Enhanced security session active</p>
                 </div>
                 <Button onClick={handleSignOut} variant="outline">
                   Sign Out
@@ -48,7 +55,7 @@ const AdminDashboard = () => {
           </div>
         </AdminGuard>
       )}
-    </AuthGuard>
+    </EnhancedAuthGuard>
   );
 };
 

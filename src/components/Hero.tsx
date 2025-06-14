@@ -17,10 +17,6 @@ const Hero = () => {
             <span className="text-blue-400"> growth by connecting the dots between </span>
             challenges and solutions.
           </h1>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Transform your business with data-driven insights and innovative strategies 
-            that deliver measurable results.
-          </p>
         </div>
       </div>
     </section>

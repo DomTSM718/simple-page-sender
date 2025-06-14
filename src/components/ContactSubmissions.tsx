@@ -12,7 +12,7 @@ interface ContactSubmission {
   email: string;
   company: string | null;
   message: string;
-  status: 'unread' | 'read' | 'responded';
+  status: string | null;
   created_at: string;
 }
 
@@ -108,7 +108,7 @@ const ContactSubmissions = () => {
                       variant={submission.status === 'unread' ? 'destructive' : 
                               submission.status === 'read' ? 'default' : 'secondary'}
                     >
-                      {submission.status}
+                      {submission.status || 'unread'}
                     </Badge>
                     <span className="text-xs text-gray-500">
                       {new Date(submission.created_at).toLocaleDateString()}

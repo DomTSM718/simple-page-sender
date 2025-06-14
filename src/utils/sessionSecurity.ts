@@ -36,17 +36,17 @@ export const getSessionRisk = (session: Session | null): 'low' | 'medium' | 'hig
   if (!session) return 'high';
   
   const now = Date.now();
-  const sessionAge = now - new Date(session.created_at).getTime();
-  const refreshAge = session.refreshed_at ? 
-    now - new Date(session.refreshed_at).getTime() : sessionAge;
+  // Use expires_at to determine session age since that's what's available
+  const expiresAt = session.expires_at ? new Date(session.expires_at * 1000).getTime() : now;
+  const sessionAge = Math.abs(expiresAt - now);
   
-  // High risk: Very old session or very old refresh
-  if (sessionAge > 8 * 60 * 60 * 1000 || refreshAge > 2 * 60 * 60 * 1000) {
+  // High risk: Session expires very soon or is expired
+  if (sessionAge < 30 * 60 * 1000) { // Less than 30 minutes remaining
     return 'high';
   }
   
-  // Medium risk: Moderately old session
-  if (sessionAge > 4 * 60 * 60 * 1000 || refreshAge > 1 * 60 * 60 * 1000) {
+  // Medium risk: Session expires in less than 2 hours
+  if (sessionAge < 2 * 60 * 60 * 1000) {
     return 'medium';
   }
   
@@ -57,9 +57,8 @@ export const sanitizeSession = (session: Session): Partial<Session> => {
   // Remove sensitive tokens from session object for logging
   return {
     user: session.user,
-    created_at: session.created_at,
-    updated_at: session.updated_at,
     expires_at: session.expires_at,
+    expires_in: session.expires_in,
   };
 };
 

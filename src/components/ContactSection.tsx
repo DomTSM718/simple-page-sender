@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -19,10 +20,38 @@ const ContactSection = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate form submission
     try {
-      // In a real application, you would send this to your backend
-      console.log('Form submitted:', formData);
+      // Insert the form submission into the database
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            company: formData.company || null,
+            message: formData.message
+          }
+        ]);
+
+      if (error) {
+        console.error('Error saving contact form:', error);
+        throw error;
+      }
+
+      // Call edge function to send email notification
+      try {
+        const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
+          body: formData
+        });
+        
+        if (emailError) {
+          console.error('Error sending email:', emailError);
+          // Don't throw here - form was saved successfully
+        }
+      } catch (emailErr) {
+        console.error('Email service error:', emailErr);
+        // Don't throw here - form was saved successfully
+      }
       
       toast({
         title: "Message Sent!",
@@ -31,6 +60,7 @@ const ContactSection = () => {
       
       setFormData({ name: '', email: '', company: '', message: '' });
     } catch (error) {
+      console.error('Form submission error:', error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",

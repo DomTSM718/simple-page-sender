@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServiceCard from '@/components/ServiceCard';
 
@@ -19,7 +18,7 @@ const ServicesSection = () => {
     {
       title: "CUSTOMER EXPERIENCE",
       description: "Delivering exceptional customer experiences is key to building loyalty and long-term success. The Solution Mob helps businesses understand their customers better, from mapping out the customer journey to improving every touchpoint. We design and implement strategies that enhance customer interactions, ensuring that your business not only meets but exceeds expectations. From personalised communication to seamless support, we help you build stronger, lasting relationships with your customers.",
-      image: "/lovable-uploads/9c7d25fb-47e7-49a5-a22e-3052bcd5bb23.png",
+      image: "/lovable-uploads/5aa1ebbf-3162-4a78-aa27-de736551e067.png",
       reverse: false
     },
     {

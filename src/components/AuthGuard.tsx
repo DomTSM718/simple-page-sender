@@ -5,7 +5,7 @@ import { supabase } from '@/integrations/supabase/client';
 import AuthForm from './AuthForm';
 
 interface AuthGuardProps {
-  children: React.ReactNode;
+  children: React.ReactNode | ((user: User) => React.ReactNode);
 }
 
 const AuthGuard = ({ children }: AuthGuardProps) => {
@@ -47,6 +47,11 @@ const AuthGuard = ({ children }: AuthGuardProps) => {
 
   if (!user) {
     return <AuthForm onSuccess={handleAuthSuccess} />;
+  }
+
+  // If children is a function, pass the user to it
+  if (typeof children === 'function') {
+    return <>{children(user)}</>;
   }
 
   return <>{children}</>;

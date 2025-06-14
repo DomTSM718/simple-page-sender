@@ -1,6 +1,7 @@
 
 import React from 'react';
 import AuthGuard from '@/components/AuthGuard';
+import AdminGuard from '@/components/AdminGuard';
 import ContactSubmissions from '@/components/ContactSubmissions';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
@@ -29,17 +30,24 @@ const AdminDashboard = () => {
 
   return (
     <AuthGuard>
-      <div className="min-h-screen bg-gray-50">
-        <div className="bg-white shadow-sm border-b">
-          <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-            <Button onClick={handleSignOut} variant="outline">
-              Sign Out
-            </Button>
+      {(user) => (
+        <AdminGuard user={user}>
+          <div className="min-h-screen bg-gray-50">
+            <div className="bg-white shadow-sm border-b">
+              <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+                <div>
+                  <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
+                  <p className="text-sm text-gray-500">Welcome, {user.email}</p>
+                </div>
+                <Button onClick={handleSignOut} variant="outline">
+                  Sign Out
+                </Button>
+              </div>
+            </div>
+            <ContactSubmissions />
           </div>
-        </div>
-        <ContactSubmissions />
-      </div>
+        </AdminGuard>
+      )}
     </AuthGuard>
   );
 };

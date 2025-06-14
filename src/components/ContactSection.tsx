@@ -56,7 +56,7 @@ const ContactSection = () => {
             LET'S TALK
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Discover your competitive advantage with a conversation.
+            Uncover your opportunity. It starts with a conversation.
           </p>
         </div>
         

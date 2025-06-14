@@ -49,13 +49,13 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-slate-900 to-black">
+    <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-6">
+          <h2 className="text-5xl font-bold text-gray-900 mb-6">
             LET'S TALK
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Uncover your opportunity. It starts with a conversation.
           </p>
         </div>
@@ -70,7 +70,7 @@ const ContactSection = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-400"
+                className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:border-blue-500"
               />
               <Input
                 type="email"
@@ -79,7 +79,7 @@ const ContactSection = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-400"
+                className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:border-blue-500"
               />
             </div>
             <Input
@@ -88,7 +88,7 @@ const ContactSection = () => {
               placeholder="Company Name"
               value={formData.company}
               onChange={handleChange}
-              className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-400"
+              className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:border-blue-500"
             />
             <Textarea
               name="message"
@@ -97,7 +97,7 @@ const ContactSection = () => {
               onChange={handleChange}
               required
               rows={6}
-              className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-400 resize-none"
+              className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:border-blue-500 resize-none"
             />
             <Button
               type="submit"

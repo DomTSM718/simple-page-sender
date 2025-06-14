@@ -10,12 +10,12 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ title, description, image, reverse = false }: ServiceCardProps) => {
   return (
-    <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 py-20 border-b border-gray-800 last:border-b-0`}>
+    <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 py-20 border-b border-gray-200 last:border-b-0`}>
       <div className="flex-1">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-wide">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 tracking-wide">
           {title}
         </h2>
-        <p className="text-lg text-gray-300 leading-relaxed max-w-2xl">
+        <p className="text-lg text-gray-700 leading-relaxed max-w-2xl">
           {description}
         </p>
       </div>

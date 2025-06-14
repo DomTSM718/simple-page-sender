@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center">
+    <section className="relative min-h-screen flex items-end justify-center pb-32">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -17,7 +17,7 @@ const Hero = () => {
       
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+          <h1 className="text-[42px] font-bold text-white mb-8 leading-tight">
             We are dedicated to enabling business growth by connecting the dots between challenges and solutions.
           </h1>
         </div>

@@ -26,8 +26,8 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'noreply@yourdomain.com', // You'll need to update this with your verified domain
-        to: ['your-email@example.com'], // Update with your actual email
+        from: 'The Solution Mob <noreply@thesolutionmob.com>', // Update this with your verified domain
+        to: ['hello@thesolutionmob.com'], // Update with your actual email
         subject: `New Contact Form Submission from ${name}`,
         html: `
           <h2>New Contact Form Submission</h2>

@@ -18,9 +18,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-            We are dedicated to enabling business
-            <span className="text-blue-400"> growth by connecting the dots between </span>
-            challenges and solutions.
+            We are dedicated to enabling business growth by connecting the dots between challenges and solutions.
           </h1>
         </div>
       </div>
